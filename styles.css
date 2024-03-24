@@ -1,40 +1,100 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  background-color: #ff69b4;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: white;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
-  
-  header {
-    background-color: #6b3878;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
   }
-  
-  .container {
-    text-align: center;
-    margin-top: 50px;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.kuromi-image {
+  width: 300px; /* Increased size */
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .kuromi-image {
-    width: 300px;
-    height: auto;
-    border-radius: 50%;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  button {
-    background-color: #6b3878;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: block; /* Button now displays as a block element */
+  margin: 20px auto 0; /* Centers the button and adds space above it */
+}
+
+button:hover {
+  background-color: #d34692;
+  transform: scale(1.1);
+}
+
+.sparkle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.sparkle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  background-color: #800080; /* Purple color */
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 9999;
+  animation: sparkleAnimation 1s infinite;
+}
+
+@keyframes sparkleAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
   }
-  
-  button:hover {
-    background-color: #8e4b9b;
+  100% {
+    transform: scale(2) rotate(360deg);
+    opacity: 0;
   }
-  
+}
